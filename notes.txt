@@ -1,0 +1,17 @@
+Encountered a few issues making the database:
+
+- the admin entity is better when created on the same tables as user, where user_id is used as both the primary key and a foreign key, inheriting the rest of user
+(the initial plan was to create the admin table separately).
+
+- a junction table might be required to link plants to plant_records as many plants can be in a single record
+and many records can refer to a single plant
+
+- plant_name (attribute) exists in both plant_reports and plant. thinking of changing this so that it saves the report separately but still identifies which plant, else adds it on demand.
+
+- user table needs to be renamed to users because user is a reserved command keyword.
+
+- probably need a super admin column to prevent random admins from adding more admins.
+
+- considering using hashes for storing password for increased security. opted for argon2 for high memory usage.
+
+- decided not to add an editing option for records and just deleting rows (while logging the deletion, both for the sake of data integrity and implementation simplicity)
