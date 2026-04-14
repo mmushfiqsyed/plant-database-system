@@ -15,3 +15,19 @@ and many records can refer to a single plant
 - considering using hashes for storing password for increased security. opted for argon2 for high memory usage.
 
 - decided not to add an editing option for records and just deleting rows (while logging the deletion, both for the sake of data integrity and implementation simplicity)
+
+--PHP SEGMENT
+Okay, made the code but didn't run it the first time around. 
+First attempted to insert the data, had a small error with brackets: ended up passing multiple column values
+to a single column
+After running the important insert statements, I made the first_admin.php, where the objective was
+to create one basic admin with a hashed password.
+First run: line 47 semicolon error (missed a semicolon)
+Second run: ran fine but I had accidentally passed the unhashed password into the database.
+Big problem. Needed to clear the database values using TRUNCATE. 
+Disable foreign key checks and use this code if ever run into the same problem (MySQL):
+-- We delete values from the admin table first, reset counters and do the same for users table --
+TRUNCATE TABLE admin;
+SET FOREIGN KEY CHECKS = 0;
+TRUNCATE TABLE users;
+SET FOREIGN KEY CHECKS = 1;
