@@ -35,7 +35,7 @@ $sqlUser = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)"
 //Conventional prepare statement setup:
 $stmt = $conn->prepare($sqlUser);
 //Attach variables to SQL placeholders
-$stmt->bind_param("sss",$adminUser,$adminEmail,$adminPass);
+$stmt->bind_param("sss",$adminUser,$adminEmail,$hashedPass);
 
 if($stmt->execute()){
     //Get last created userid for creating our admin table insertion statement:
