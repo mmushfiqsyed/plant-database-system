@@ -42,7 +42,7 @@ if($stmt->execute()){
     $last_id = $conn->insert_id;
 
     //Promote created user to admin table:
-    $sqlAdmin = "INSERT INTO admin (user_id, is_super_admin) VALUES (?, TRUE)"
+    $sqlAdmin = "INSERT INTO admin (user_id, is_super_admin) VALUES (?, TRUE)";
     //Same setup as before to insert into SQL Statement
     $stmtAdmin = $conn->prepare($sqlAdmin);
     //Attach variables like before:
