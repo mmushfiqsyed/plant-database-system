@@ -31,3 +31,6 @@ TRUNCATE TABLE admin;
 SET FOREIGN KEY CHECKS = 0;
 TRUNCATE TABLE users;
 SET FOREIGN KEY CHECKS = 1;
+
+Separated the database connection statements into another db_connect.php file, quickly realized 
+would have to write this for everytime I needed to connect to the database.
