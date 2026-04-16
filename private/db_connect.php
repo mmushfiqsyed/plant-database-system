@@ -8,11 +8,14 @@ $password = "";
 $dbname = "plant_db";
 
 //Pass the declared variables into a connection function:
-try{
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-}
-catch(mysqli_sql_exception){
-    echo "Could not connect! <br>";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+//Check connection
+if(!$conn)
+{
+    die("Connection failed: ".mysqli_connect_error());
 }
 
 ?>
