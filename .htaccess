@@ -13,6 +13,18 @@ RewriteRule ^login\.php$ http://localhost/plantdb/login [R=302,L]
 
 RewriteRule ^login$ login_form.php [NC,L]
 
+# URL cleaning, register_form.php
+RewriteCond %{THE_REQUEST} /register_form\.php [NC]
+RewriteRule ^register_form\.php$ http://localhost/plantdb/register [R=302,L]
+
+RewriteRule ^register$ register_form.php [NC,L]
+
+# URL cleaning, register.php
+RewriteCond %{THE_REQUEST} /register\.php [NC]
+RewriteRule ^register\.php$ http://localhost/plantdb/register [R=302,L]
+
+RewriteRule ^register$ register_form.php [NC,L]
+
 # URL cleaning, admin.php
 RewriteCond %{THE_REQUEST} /admin_dashboard\.php [NC]
 RewriteRule ^admin_dashboard\.php$ http://localhost/plantdb/admin [R=302,L]

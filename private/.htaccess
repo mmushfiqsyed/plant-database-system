@@ -1,1 +1,6 @@
+Order Deny,Allow
 Deny from all
+
+<FilesMatch "^(login\.php|register\.php)$">
+    Allow from all
+</FilesMatch>

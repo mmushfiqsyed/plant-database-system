@@ -34,10 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            echo "Invalid password.";
+            header("Location: /plantdb/login_form.php?msg=error");
+            exit();
         }
     } else {
-        echo "No user found with that username.";
+        header("Location: /plantdb/login_form.php?msg=error");
+        exit();
     }
 }
+
+$conn->close();
 ?>

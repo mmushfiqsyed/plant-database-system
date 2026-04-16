@@ -11,7 +11,7 @@ $adminPass = 'Password444';
 $options = [
     'memory_cost' => 19456,
     'time_cost'   => 2,
-    'threads'     => 1,
+    'threads'     => 1
 ];
 $hashedPass = password_hash($adminPass, PASSWORD_ARGON2ID, $options);
 
