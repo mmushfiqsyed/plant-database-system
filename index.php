@@ -6,6 +6,10 @@
     <title>User Dashboard</title>
 </head>
 <body>
+    <?php 
+    include "private/db_connect.php";
+    include "private/login_check.php";
+    ?>
     <h1>Welcome to the User Dashboard!</h1>
 </body>
 </html>
