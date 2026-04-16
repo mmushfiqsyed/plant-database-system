@@ -15,9 +15,7 @@ $options = [
 ];
 $hashedPass = password_hash($adminPass, PASSWORD_ARGON2ID, $options);
 
-//Insert the data into USERS table
-$sqlUser = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)";
-//Conventional prepare statement setup:
+$sqlUser = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)"
 $stmt = $conn->prepare($sqlUser);
 //Attach variables to SQL placeholders
 $stmt->bind_param("sss",$adminUser,$adminEmail,$hashedPass);
@@ -36,7 +34,7 @@ if($stmt->execute()){
     if($stmtAdmin->execute())
     {
         echo "<h2>Success!</h2>";
-        echo "<p>Admin created with ID: ".$last_id."</p>";
+        echo "<p>User created with ID: ".$last_id."</p>";
         echo "<p>You can now login with the password: <b> $adminPass </b>";
     }
     else{
