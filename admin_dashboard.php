@@ -14,12 +14,15 @@
 
     <?php if (isset($_SESSION['username'])): ?>
         <p>Currently logged in as: <?php echo $_SESSION['username']; ?></p>
-    <?php else: ?>
-        <p><a href="login">Please Login</a></p>
     <?php endif; ?>
-    <div>
-    <button type="submit">Check reports</button>
-    <button type="submit">Modify users</button>
-    </div>
+    <nav>
+    <h3>M</h3>
+    <ul>
+        <li><a href="/audit_log.php">Audit Logs</a></li>
+        <li><a href="/reports.php">Check Reports</a></li>
+        <li><a href="/records.php">Check Records</a></li>
+        <li><a href="/admin_register.php">Add Admin or SuperAdmin</a></li>
+    <ul>
+    </nav>
 </body>
 </html>

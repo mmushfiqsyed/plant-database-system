@@ -31,11 +31,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     $stmt = $conn->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
     //Attach variables to SQL placeholders
-    $stmt->bind_param("sss",$username,$email,$password);
+    $stmt->bind_param("sss",$username,$email,$hashedPass);
 
     if($stmt->execute())
     {
-        // Registration success! Send them to login.
+        // Registration successful. Send them to login.
         header("Location: /plantdb/login_form.php?msg=registered");
         exit();
     }

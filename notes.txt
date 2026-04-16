@@ -35,5 +35,8 @@ SET FOREIGN KEY CHECKS = 1;
 Separated the database connection statements into another db_connect.php file, quickly realized 
 would have to write this for everytime I needed to connect to the database.
 
-
-* Login_form.php - contains the login page, the first page the users see. debating if this should be changed to index.html
+basic login credentials:
+Admin - Password444
+User - Password123
+-- made through the UI --
+UserTwo - UserTwo
