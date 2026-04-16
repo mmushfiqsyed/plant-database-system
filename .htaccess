@@ -1,0 +1,20 @@
+Options -Indexes -MultiViews
+RewriteEngine On
+
+# URL cleaning, login_form.php
+RewriteCond %{THE_REQUEST} /login_form\.php [NC]
+RewriteRule ^login_form\.php$ http://localhost/plantdb/login [R=302,L]
+
+RewriteRule ^login$ login_form.php [NC,L]
+
+# URL cleaning, login.php
+RewriteCond %{THE_REQUEST} /login\.php [NC]
+RewriteRule ^login\.php$ http://localhost/plantdb/login [R=302,L]
+
+RewriteRule ^login$ login_form.php [NC,L]
+
+# URL cleaning, admin.php
+RewriteCond %{THE_REQUEST} /admin_dashboard\.php [NC]
+RewriteRule ^admin_dashboard\.php$ http://localhost/plantdb/admin [R=302,L]
+
+RewriteRule ^admin$ admin_dashboard.php [NC,L]

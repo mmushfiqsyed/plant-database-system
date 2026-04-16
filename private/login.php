@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     //Prepared statement to prevent SQL Injection
-    $stmt = $conn->prepare("SELECT user_id, password_hash FROM users WHERE username = ?");
+    $stmt = $connection->prepare("SELECT user_id, password_hash FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -20,17 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $username;
 
             //Check if this user is an Admin
-            $admin_stmt = $conn->prepare("SELECT is_super_admin FROM admin WHERE user_id = ?");
+            $admin_stmt = $connection->prepare("SELECT is_super_admin FROM admin WHERE user_id = ?");
             $admin_stmt->bind_param("i", $row['user_id']);
             $admin_stmt->execute();
             $admin_res = $admin_stmt->get_result();
 
             if ($admin_res->num_rows > 0) {
                 $_SESSION['role'] = 'admin';
-                header("Location: admin_dashboard.php"); // Redirect to Admin area
+                header("Location: /plantdb/admin_dashboard.php"); // Redirect to Admin area
             } else {
                 $_SESSION['role'] = 'user';
-                header("Location: index.php"); // Redirect to home
+                header("Location: /plantdb/index.php"); // Redirect to home
             }
             exit();
         } else {
