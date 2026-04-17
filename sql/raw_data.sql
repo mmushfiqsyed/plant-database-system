@@ -1,13 +1,14 @@
 -- RAW DATA --
 -- Region names--
-INSERT INTO region(region_name) VALUES ('Dhaka Division'),
-('Chattogram Division'),
-('Sylhet Division'),
-('Rajshahi Division'),
-('Khulna (Sundarbans Area)'),
-('Barishal Division'),
-('Rangpur Division'),
-('Mymensingh Division');
+INSERT INTO region(region_name) VALUES ('Dhaka'),
+('Chattogram'),
+('Sylhet'),
+('Rajshahi'),
+('Khulna'),
+('Sundarbans'),
+('Barishal'),
+('Rangpur'),
+('Mymensingh');
 
 -- Sample plant data --
 INSERT INTO plant (plant_name, species, category) VALUES 

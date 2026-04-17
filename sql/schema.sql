@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS plant_reports (
     report_id INT AUTO_INCREMENT PRIMARY KEY,
     plant_name_suggested VARCHAR(100),
     description TEXT,
-    status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
+    status ENUM('Pending', 'Approved', 'Rejected', 'Finalized') DEFAULT 'Pending',
     submitted_by INT,
     reviewed_by INT,
     region_id INT,
