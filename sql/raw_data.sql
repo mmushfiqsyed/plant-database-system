@@ -19,7 +19,3 @@ INSERT INTO plant (plant_name, species, category) VALUES
 ('Arjun', 'Terminalia arjuna', 'Medicinal Tree'),
 ('Krishnachura', 'Delonix regia', 'Ornamental Tree'),
 ('Jarul', 'Lagerstroemia speciosa', 'Timber Tree');
-
--- Sample "official" data --
-INSERT INTO plant_record (area_size, date_added, managed_by, region_id) 
-VALUES (2500.00, CURDATE(), 1, 3);

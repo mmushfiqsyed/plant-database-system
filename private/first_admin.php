@@ -15,7 +15,7 @@ $options = [
 ];
 $hashedPass = password_hash($adminPass, PASSWORD_ARGON2ID, $options);
 
-$sqlUser = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)"
+$sqlUser = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sqlUser);
 //Attach variables to SQL placeholders
 $stmt->bind_param("sss",$adminUser,$adminEmail,$hashedPass);
