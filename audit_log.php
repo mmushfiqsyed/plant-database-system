@@ -18,12 +18,8 @@
 </head>
 <body>
     <nav>
-        <div>
-            <h2>Audit Log</h2>
-        </div>
-        <div>
-            <a href="admin_dashboard.php">Return to Dashboard</a>
-        </div>
+        <h2>Audit Log</h2>
+        <a href="admin_dashboard.php">Return to Dashboard</a>
     </nav>
     <?php
     require "private/admin_check.php"; 
