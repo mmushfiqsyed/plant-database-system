@@ -65,14 +65,14 @@
         $managed_by = $_SESSION['user_id']; // The Admin currently logged in
         $plant_ids = $_POST['plant_ids']; // This will be an array of selected plants
 
-        // Step 1: Insert into plant_records
+        // Insert into plant_records
         $stmt1 = $conn->prepare("INSERT INTO plant_record (area_size, date_added, managed_by, region_id) VALUES (?, NOW(), ?, ?)");
         $stmt1->bind_param("dii", $area_size, $managed_by, $region_id);
         
         if($stmt1->execute()) {
             $new_record_id = $conn->insert_id; // Get the ID of the record we just made
 
-            // Step 2: Insert into record_plants (The Junction Table)
+            // Insert into record_plants (The Junction Table)
             $stmt2 = $conn->prepare("INSERT INTO record_plants (record_id, plant_id) VALUES (?, ?)");
             foreach ($plant_ids as $p_id) {
                 $stmt2->bind_param("ii", $new_record_id, $p_id);

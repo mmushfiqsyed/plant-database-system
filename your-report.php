@@ -23,10 +23,10 @@
         <a href="index.php">Return to Dashboard</a>
     </nav>
     <?php 
-    //Get current user_id
+    // Get current user_id
     $current_user_id = intval($_SESSION['user_id']);
 
-    //Select rows which are from current logged in user:
+    // Select rows which are from current logged in user:
     $user_rows = $conn->prepare("SELECT pr.plant_name_suggested, pr.`description`, pr.`status`, r.region_name FROM plant_reports AS pr JOIN region AS r ON pr.region_id = r.region_id WHERE submitted_by = ?");
     $user_rows->bind_param('i', $current_user_id);
     $user_rows->execute();
@@ -45,7 +45,7 @@
         </thead>
         <tbody>
             <?php 
-            //Loop through each report row that is made by this user and also show report number.
+            // Loop through each report row that is made by this user and also show report number.
             $counter = 1;
             if ($result->num_rows > 0): 
             ?>
