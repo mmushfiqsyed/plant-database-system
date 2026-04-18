@@ -45,6 +45,7 @@
         </thead>
         <tbody>
             <?php 
+            //Loop through each report row that is made by this user and also show report number.
             $counter = 1;
             if ($result->num_rows > 0): 
             ?>
