@@ -57,7 +57,8 @@ $result = $conn->query($query);
                 <th>Description</th>
                 <th>Submitted by</th>
                 <th>Email</th>
-                <th>Actions</th> </tr>
+                <th>Actions</th>
+            </tr>
         </thead>
         <tbody>
             <?php if ($result->num_rows > 0): ?>

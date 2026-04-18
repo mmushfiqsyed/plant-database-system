@@ -4,6 +4,7 @@ require "private/db_connect.php";
 
 $current_user_id = $_SESSION['user_id'];
 $super_check = $conn->prepare("SELECT is_super_admin FROM admin WHERE user_id = ?");
+//1. Note how bind_param is used here:
 $super_check->bind_param("i", $current_user_id);
 $super_check->execute();
 $super_result = $super_check->get_result();
@@ -13,6 +14,7 @@ $is_super = ($admin_data && $admin_data['is_super_admin'] == 1);
 
 // Handle Promotion, Update, and Demotion
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $is_super) {
+    //2. But bind_param is not used here:
     $target_user_id = intval($_POST['target_user_id']);
     $alert_msg = "";
 
