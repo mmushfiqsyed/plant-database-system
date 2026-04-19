@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <style>
+        li { text-decoration: none;}
+        .header{ display: flex; box-sizing: border-box; justify-content: space-between; align-items: center;}
+        .sign-out{ text-decoration:none; color:red; border: 1px solid #000; padding:12px;}
+    </style>
 </head>
 <body>
     <?php 
     include "private/db_connect.php";
     include "private/admin_check.php";
     ?>
-    <h1>Welcome to the Bangladesh Plant Portal</h1>
-
+    <div class="header">
+        <h1>Welcome to the Bangladesh Plant Portal</h1>
+        <div>
+            <a class="sign-out" href=login_form.php>Sign Out</a>
+        </div>
+    </div>
     <?php if (isset($_SESSION['username'])): ?>
         <p>Currently logged in as: <?php echo $_SESSION['username']; ?></p>
     <?php endif; ?>

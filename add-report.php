@@ -3,7 +3,7 @@
     include "private/login_check.php";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_report'])) {
-        $plant_name = $_POST['plant_name'];
+        $plant_name = trim($_POST['plant_name']) ?: "Unknown";
         $description = $_POST['description'];
         $submitted_by = $_SESSION['user_id'];
         $region_id = $_POST['region_id'];

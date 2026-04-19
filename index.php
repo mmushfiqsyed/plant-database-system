@@ -6,6 +6,8 @@
     <title>User Dashboard</title>
     <style>
         li{ text-decoration: none;}
+        .header{ display: flex; box-sizing: border-box; justify-content: space-between; align-items: center;}
+        .sign-out{ text-decoration:none; color:red; border: 1px solid #000; padding:12px;}
     </style>
 </head>
 <body>
@@ -13,7 +15,12 @@
     include "private/db_connect.php";
     include "private/login_check.php";
     ?>
-    <h1>Welcome to the User Dashboard!</h1>
+    <div class="header">
+        <h1>Welcome to the User Dashboard!</h1>
+        <div>
+            <a class="sign-out" href=login_form.php>Sign Out</a>
+        </div>
+    </div>
     <p>Currently logged in as: <?php echo $_SESSION['username']?> </p>
     <h3>Options:</h3>
     <nav>
