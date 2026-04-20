@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
+$admin_stmt->close();
+$stmt->close();
 $conn->close();
 ?>

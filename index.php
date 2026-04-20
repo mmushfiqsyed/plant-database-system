@@ -30,5 +30,6 @@
             <li><a href="browse-records.php">Browse records</a></li>
         </ul>
     </nav>
+    <?php $conn->close(); ?>
 </body>
 </html>

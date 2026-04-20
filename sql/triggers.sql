@@ -21,4 +21,12 @@ BEGIN
     VALUES ('plant_record', 'DELETE', OLD.record_id, @current_admin_id, 'Official record removed');
 END //
 
+CREATE TRIGGER after_record_insert
+AFTER INSERT ON plant_record
+FOR EACH ROW
+BEGIN
+    INSERT INTO audit_log (table_name, action_type, record_id, admin_id, log_details)
+    VALUES ('plant_record', 'INSERT', NEW.record_id, @current_admin_id, 'Official record added');
+END //
+
 DELIMITER ;

@@ -137,5 +137,6 @@ $users_result = $conn->query($query);
         </div>
         <?php endif; ?>
     </div>
+    <?php $conn->close(); ?>
 </body>
 </html>

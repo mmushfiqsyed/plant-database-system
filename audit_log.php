@@ -62,5 +62,6 @@
             <?php endif; ?>
         </tbody>
     </table>
+    <?php $conn->close(); ?>
 </body>
 </html>

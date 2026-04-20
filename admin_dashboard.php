@@ -31,7 +31,9 @@
         <li><a href="reports.php">Check Reports</a></li>
         <li><a href="records.php">Check Records</a></li>
         <li><a href="admin_register.php">Add Admin or SuperAdmin</a></li>
+        <li><a href="add-plants.php">Add Plants</a></li>
     <ul>
     </nav>
+    <?php $conn->close(); ?>
 </body>
 </html>

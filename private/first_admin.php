@@ -41,6 +41,7 @@ if($stmt->execute()){
         echo "Error: ".$conn->error;
     }
 }
-
+$stmt->close();
+$stmtAdmin->close();
 $conn->close();
 ?>

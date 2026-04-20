@@ -90,10 +90,10 @@
     }
     ?>
     <div class="tab-container">
-        <button class="tab-btn" onclick="showTab(event, 'view')">View Official Records</button>
-        <button class="tab-btn active" onclick="showTab(event, 'add')">Create New Record</button>
+        <button class="tab-btn active" onclick="showTab(event, 'view')">View Official Records</button>
+        <button class="tab-btn" onclick="showTab(event, 'add')">Create New Record</button>
     </div>
-    <div id="add-section" class="tab-content">
+    <div id="add-section" class="tab-content hidden">
         <div class="container">
             <div class="main-entry">
                 <h3>Add Plant Record</h3>
@@ -157,7 +157,7 @@
         </div>
     </div>
 
-    <div id="view-section" class="tab-content hidden">
+    <div id="view-section" class="tab-content">
         <table>
             <thead>
                 <tr>
@@ -215,5 +215,6 @@
             evt.currentTarget.classList.add('active');
         }
     </script>
+    <?php $conn->close(); ?>
 </body>
 </html>

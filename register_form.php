@@ -28,5 +28,6 @@
         <br>
         <button type="submit">Sign Up</button>
     </form>
+    <?php $conn->close(); ?>
 </body>
 </html>

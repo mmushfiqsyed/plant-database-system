@@ -43,6 +43,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         echo "Error: ".$conn->error;
     }
 }
-
+$checkUser->close();
+$checkEmail->close();
+$stmt->close();
 $conn->close();
 ?>

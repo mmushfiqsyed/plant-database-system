@@ -26,7 +26,6 @@
             const messages = {
                 'registered': 'Registration successful! You can now log in.',
                 'error': 'Invalid username or password.',
-                'loggedout': 'You have been successfully logged out.'
             };
 
             const msgKey = "<?php echo htmlspecialchars($_GET['msg']); ?>";
